@@ -3,6 +3,9 @@ uuid = "41bd366b-c164-4670-9c6d-3e88697d5aa0"
 authors = ["Felipe S. S. Schneider <schneider.felipe@posgrad.ufsc.br> and contributors"]
 version = "0.1.0"
 
+[deps]
+ToeplitzMatrices = "c751599d-da0a-543b-9d20-d0a503d91d24"
+
 [compat]
 julia = "1"
 

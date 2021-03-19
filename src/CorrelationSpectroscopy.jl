@@ -1,5 +1,9 @@
 module CorrelationSpectroscopy
 
-# Write your package code here.
+using ToeplitzMatrices: Toeplitz
+
+export NodaHilbert, N
+
+include("nodahilbert.jl")
 
 end
