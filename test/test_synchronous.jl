@@ -1,6 +1,9 @@
 @testset "synchronous.jl" begin
     x, data = demodata()
-    syn = synchronous(data .- mean(data, dims=1))
+    adjdata = data .- mean(data, dims=1)
+
+    syn = synchronous(adjdata)
+    @test syn ≈ cov(adjdata)
 
     @plottest begin
         heatmap(x, x, syn)

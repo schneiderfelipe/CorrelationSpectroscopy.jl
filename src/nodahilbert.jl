@@ -56,5 +56,6 @@ function (N::NodaHilbert{T})(n::Int) where {T}
     return Toeplitz(-c, c)
 end
 
+# TODO: check eltype(A) when realizing the transform?
 # TODO: probably improve the fact that it realizes an object every time?
 Base.:*(N::NodaHilbert, A::AbstractArray) = N(size(A, 1)) * A
