@@ -1,4 +1,4 @@
-# CorrelationSpectroscopy
+# CorrelationSpectroscopy.jl
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://schneiderfelipe.github.io/CorrelationSpectroscopy.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://schneiderfelipe.github.io/CorrelationSpectroscopy.jl/dev)
