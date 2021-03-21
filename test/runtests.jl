@@ -21,12 +21,12 @@ This function might go into the main code in the future if there is demand.
 
 # Examples
 ```jldoctest
-julia> x, data = demodata();
+julia> x, A = demodata();
 
 julia> length(x)
 500
 
-julia> size(data)
+julia> size(A)
 (15, 500)
 ```
 """
@@ -41,7 +41,7 @@ function demodata()
     A₄(n) = a₀ + 0.03exp(-0.3(n - 6)^2) - 1.6(0.2375 - a₀) / (1 + exp(-(n - 7)))
 
     σ = 2.0
-    data = [
+    A = [
         A₁(t) * gaussian(xᵢ, 10, σ) +
         A₂(t) * gaussian(xᵢ, 20, σ) +
         A₃(t) * gaussian(xᵢ, 30, σ) +
@@ -51,7 +51,7 @@ function demodata()
         for t in 1:n, xᵢ in x
     ]
 
-    return x, data
+    return x, A
 end
 gaussian(x, μ=0.0, σ=1.0) = exp(-((x - μ) / σ)^2)
 
@@ -60,4 +60,5 @@ gaussian(x, μ=0.0, σ=1.0) = exp(-((x - μ) / σ)^2)
     include("test_demodata.jl")
     include("test_synchronous.jl")
     include("test_asynchronous.jl")
+    include("test_disrelation.jl")
 end

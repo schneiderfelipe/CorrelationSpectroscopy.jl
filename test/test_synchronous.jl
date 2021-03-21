@@ -1,12 +1,12 @@
 @testset "synchronous.jl" begin
-    x, data = demodata()
-    adjdata = data .- mean(data, dims=1)
+    x, A = demodata()
+    Ã = A .- mean(A, dims=1)
 
-    syn = synchronous(adjdata)
-    @test syn ≈ cov(adjdata)
+    Φ = synchronous(Ã)
+    @test Φ ≈ cov(Ã)
 
     @plottest begin
-        heatmap(x, x, syn)
+        heatmap(x, x, Φ)
         plot!(xflip=true, yflip=true)
         xlabel!("Peak position")
         ylabel!("Peak position")
@@ -14,7 +14,7 @@
     end "synchronous.png"
 
     @plottest begin
-        plot(x, diag(syn), label=:none)
+        plot(x, diag(Φ), label=:none)
         xlabel!("x")
         ylabel!("I")
     end "autocorrelation.png"

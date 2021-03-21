@@ -1,10 +1,10 @@
 @testset "demodata" begin
-    x, data = demodata()
+    x, A = demodata()
 
     @plottest begin
-        plot(x, data[1, :], label="1")
+        plot(x, A[1, :], label="1")
         for n in 4:3:13
-            plot!(x, data[n, :], label="$n")
+            plot!(x, A[n, :], label="$n")
         end
         xlabel!("Peak position")
         ylabel!("I")
